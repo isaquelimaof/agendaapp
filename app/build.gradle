@@ -24,7 +24,8 @@ dependencies {
     implementation 'com.google.guava:guava:30.1.1-jre'
     
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+
 
 }
 

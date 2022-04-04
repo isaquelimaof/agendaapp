@@ -7,6 +7,7 @@ package util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -16,11 +17,11 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     
     public static final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost:3606/agendaapp";
+    public static final String URL = "jdbc:mysql://localhost:3306/agendaapp";
     public static final String USER = "root";
     public static final String PASS = "";
     
-    public static java.sql.Connection getConnection(){
+    public static Connection getConnection(){
         try {
             Class.forName(DRIVER);
             return DriverManager.getConnection(URL, USER, PASS);
@@ -35,19 +36,31 @@ public class ConnectionFactory {
                 connection.close();
             }
         } catch (SQLException ex) {
-            throw new RuntimeException("Erro ao fechar a conex?o com o banco de dados", ex);
+            throw new RuntimeException("Erro ao fechar a conexao com o banco de dados", ex);
         }
     }
     
     public static void closeConnection(Connection connection, PreparedStatement statement) {
-        closeConnection(connection);
+        
         try {
             if (statement != null) {
                 statement.close();
-            }
+            }    
         } catch (SQLException ex) {
-            throw new RuntimeException("Erro ao fechar a conex?o com o banco de dados", ex);
+            throw new RuntimeException("Erro ao fechar a conexao com o banco de dados", ex);
         }
         
     }
+    
+     public static void closeConnection(ResultSet resultSet, Connection connection, PreparedStatement statement) {
+        
+        try {
+            if (resultSet != null) {
+                resultSet.close();
+            }    
+        } catch (SQLException ex) {
+            throw new RuntimeException("Erro ao fechar a conexao com o banco de dados", ex);
+        }
+     }
+      
 }
