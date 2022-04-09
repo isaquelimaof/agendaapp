@@ -184,6 +184,7 @@ public class MainScreen extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jList1.setFixedCellHeight(30);
         jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout jPanelProjectListLayout = new javax.swing.GroupLayout(jPanelProjectList);
@@ -231,6 +232,7 @@ public class MainScreen extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setRowHeight(30);
         jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanelTaskListLayout = new javax.swing.GroupLayout(jPanelTaskList);

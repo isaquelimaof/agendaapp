@@ -384,6 +384,7 @@
                         <StringItem index="4" value="Item 5"/>
                       </StringArray>
                     </Property>
+                    <Property name="fixedCellHeight" type="int" value="30"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -449,6 +450,7 @@
                         <Column editable="true" title="Tarefa Comclu&#xed;da" type="java.lang.Boolean"/>
                       </Table>
                     </Property>
+                    <Property name="rowHeight" type="int" value="30"/>
                   </Properties>
                 </Component>
               </SubComponents>
