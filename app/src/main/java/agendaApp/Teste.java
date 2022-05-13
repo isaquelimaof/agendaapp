@@ -17,10 +17,10 @@ public class Teste {
         
         Project project = new Project();
         ProjectController projectController = new ProjectController();
-        
-        /*project.setName("Criando projeto 01");
-        project.setDescription("Descreção do projeto 01");
-        projectController.save(project);*/
+        project.setId(2);
+        project.setName("Criando projeto 02...---");
+        project.setDescription("Descreção do projeto 02");
+        projectController.update(project);
         
         List<Project> projects = projectController.getAll();
         for(Project list : projects){
